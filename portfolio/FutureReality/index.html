@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Future Reality | 未来现实</title>
+		<link rel="shortcut icon" type="image/x-icon" href="images/logo_sh_1.png" />
+		<meta name="description" content="Thumbnail Grid with Expanding Preview" />
+		<meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
+		<meta name="author" content="Han Su" />
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel='stylesheet' href='//fonts.googleapis.com/earlyaccess/kopubbatang.css'>
+
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+
+	</head>
+	<body>
+	<style>
+
+		a img{
+			height: 25vmax;
+			width: 25vmax;
+		}
+
+	</style>
+	<!--<canvas id="canvas"></canvas>-->
+	<div id="overlay">
+
+		<script src="js/anime.min.js"></script>
+		<script src="js/demo.js"></script>
+
+		<div class="container">
+			<header class="clearfix">
+				<h1 id="ccd" class = "font">Future Reality | 未来现实</h1>
+			</header>
+
+			<div class="main project">
+				<ul id="og-grid" class="og-grid">
+					<li class = "movie__card trans project__card">
+						<a href="../AugmentedRealityMenu" data-show = "yes" data-largesrc="images/menu.png" data-title="AR Menu with Tangible Interactions" data-description="This augmented reality Menu is designed for restaurants in the near future. Every time when people walk into the restaurant, a beacon will send the related website to the user, when put the camera at the menu, there will be AR parts revealing, the user can interact with the menu with functions of showing 3D models of dishes, see nutrition lables, order food, and even the see panorama streaming of the how your food is being made. I build a demo in Unity with Vuforia, and streaming 360 video with Ricoh Theta.">
+							<img src="images/menu.png" alt="img01"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="https://www.youtube.com/watch?v=zBtz_ynLg2I&t=28s" data-largesrc="images/lysense.png" data-title="Lysense" data-description="Lysense is a project for future transportation, it is designed to replace traffic light. The ideal functionality would be achieved by AR wearable devices, as well as a projection mapping/LED make up for non-ar clients. The idea is that there will be safe zone and dangerous zones shown to people through AR instead of traffic lights. Pedestrians' movements are captured by motion sensors and a calculation of safe zones are respectively sent to cars and pedestrians. I built a Unity simulation for a specific circumstance: People don't always obey traffic lights, which is especially dangerous during night, the projection mapping could help during night. Thanks to the very innovative and helpful Professor -- Mitchel Joachim for directing the project, and thanks to NYU Future Reality lab for the sensors and devices, dope place with dope people.">
+							<img src="images/lysense.png" alt="img02"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="https://www.youtube.com/watch?v=gV2MTyQS5Jc" data-largesrc="images/shanghai.png" data-title="Shanghai·静" data-description="People have an impressions of Shanghai as a busy, charming, highly-developed metropolitan, but it also has a quiet and living side, as well as problems drawn by the rapid development. I spent the summer of 2015 shooting VR documentaries of the old neighbourhoods，and making photogremmetry 3D models of the Shikumen architectures which will soon be demolished and replaced by skyscrapers. I built a Unity simulation with different doors in photogremmetry models leading to different neighbourhoods in 360 videos. This project is selected and supported by Dean's Undergraduate Research Funds. Thanks to my friend David Lin who joined me to make this wonderful project possible.">
+							<img src="images/shanghai.png" alt="img03"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="http://2015.igem.org/Team:NYU_Shanghai/VirtualReality" data-largesrc="images/igem.png" data-title="Biological Simulations" data-description="This project is part of the NYUShanghai's 2015 iGEM and I'm the main developer, it is a VR simulation of the E.coli cell, with inner structures including ribosome, DNA .etc, people can walk into the cell and explore the biological structures. There is also a 360 video to showing the processes of doing plasmid miniprep. Thanks to the help of Bruno Kruse, and many thanks to my dear teammates and our instructors. ">
+							<img src="images/igem.png" alt="img01"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="https://suhan1996.github.io/PeriodicAR/PeriodicAR" data-largesrc="images/periodic.png" data-title="PeriodicAR" data-description="This project is based on the three.js periodic table example. I added face controlling to free the mouse, as well as different effects on hovering different elements, including 3D models, flamming test color or it's common molecular formula. This is the final project for Professor Ken Perlin's Computer Graphic, and thanks to my partner Ziming for the amazing atomic models.">
+							<img src="images/periodic.png" alt="img02"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="https://maps.google.com/localguides/home?utm_content=Marketing%20Site" data-largesrc="images/google.PNG	" data-show = "yes" data-title="Panorama Photography" data-description="I'm a fan of photography, and panorama is one of my favourite form, panorama has the capability to reflect the environment as a whole. Whenever I find a harmonic environment, I'll use panorama to record its special beauty, I got more than 1000k views with my panorama selection on google, and I'm a google local guide.">
+							<img src="images/fh.PNG" alt="img03"/>
+						</a>
+					</li>
+
+
+				</ul>
+			</div>
+		</div><!-- /container -->
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/grid.js"></script>
+		<script src="js/jquery.hover3d.min.js"></script>
+
+		<script>
+			$(function() {
+				Grid.init();
+			});
+            $(".movie__card").hover3d({
+                selector: "img",
+                shine: true,
+                sensitivity: 15,
+            });
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+.title {
+	color: #fff;
+	font-size: 6vw;
+	font-weight: 400;
+	z-index: 1000;
+	font-family: "Arapey", serif;
+	pointer-events: none;
+}
+
+.scene path {
+	z-index: -100;
+	/*fill: #171817;*/
+	color:gainsboro;
+	fill: gainsboro;
+	transform: translateZ(-10px);
+	opacity: 0.2;
+
+}
+.demo-4{
+	transform-style: preserve-3d;
+	opacity: 1;
+	height: 0px;
+	z-index: -1000;
+}

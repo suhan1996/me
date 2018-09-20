@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Creative Coding | 创意编程</title>
+		<link rel="shortcut icon" type="image/x-icon" href="images/logo_sh_1.png" />
+		<meta name="description" content="Thumbnail Grid with Expanding Preview" />
+		<meta name="keywords" content="thumbnails, grid, preview, google image search, jquery, image grid, expanding, preview, portfolio" />
+		<meta name="author" content="Han Su" />
+		<link rel="stylesheet" type="text/css" href="../FutureReality/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="../FutureReality/css/component.css" />
+		<script src="../FutureReality/js/modernizr.custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="../FutureReality/css/normalize.css" />
+		<link rel='stylesheet' href='//fonts.googleapis.com/earlyaccess/kopubbatang.css'>
+
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+
+	</head>
+	<body>
+	<style>
+
+		a img{
+			height: 25vmax;
+			width: 25vmax;
+		}
+
+	</style>
+	<!--<canvas id="canvas"></canvas>-->
+	<div id="overlay">
+
+		<script src="../FutureReality/js/anime.min.js"></script>
+		<script src="../FutureReality/js/demo.js"></script>
+
+		<div class="container">
+			<header class="clearfix">
+				<h1 id="ccd" class = "font">Creative Coding | 创意编程</h1>
+			</header>
+
+			<div class="main project">
+				<ul id="og-grid" class="og-grid">
+					<li class = "movie__card trans project__card">
+						<a href="https://github.com/suhan1996/Webber" data-largesrc="images/webber.png" data-title="Webber" data-description="My capstone in progress, it is designed as a linked data platform application where people on the same site share ideas of the website or the organization behind it, or even an online demonstration for ECD(Electronic Civil Disobedience). Now it has a chrome extension version as a demo, since it's browser based, people can use it to leave a comment without the censorship from the government.">
+							<img src="images/webber.png" alt="img01"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="https://suhan1996.github.io/24Chars" data-largesrc="images/24.png" data-title="24 Characters" data-description="After President Xi proposed the core value of socialism, these 24 characters are prevalently displayed in China, everywhere you go, you can see those characters, and they are
+						Prosperity    Democracy    Civility    Harmony
+Freedom    Equality    Justice    Rule of Law
+Patriotism    Dedication    Integrity    Friendship ">
+							<img src="images/24.png" alt="img02"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="https://suhan1996.github.io/StarPatternsGenerator/" data-largesrc="images/star.png" data-title="Islamic Star Painting Board" data-description="One thing I recently noticed in Abu Dhabi is the arabic star-like patterns. Arabic people are fond of repetition, like the language itself, when one says 'Sabah el-khair(Morning with good)' the other replies 'Sabah en-noor(Morning with health)', it's like ping-pang, when one thing is generated, some other similar thing is followed. The same philosophy could be found in the islamic star like patterns, like the NYU AD logo, which is consisted with four torches reflected to each other, the interesting thing of this logo is that it could extend, to a infinity surface. So I made a website to draw this kind of repetitive patterns.">
+							<img src="images/star.png" alt="img03"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="https://github.com/suhan1996/MachineLearning_Hottnesscale/tree/master" data-largesrc="images/face.png" data-title="Hottnesscale" data-description="Hottnesscale is my final project for Machine Learning class, it uses thousands of faces images as training data. Every face is marked either as beautiful or not beautiful, and the every face has its facial data i.e. landmarks, like the distance between the eyes, or the size of the mouth, there are 52 landmarks every face. Accordingly, I'm using K-Means algorithm to get 10 average faces(which are essentially landmarks data) as perfect face. Then when a new person take a photo and send the image to the python script, a score will be calculated comparing to each of the ten perfect 'face', and the highest one will be the final sore.">
+							<img src="images/face.png" alt="img01"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="../3D-dictionary" data-largesrc="images/dict.png" data-title="3Dictionary" data-description="While I was preparing the GRE test, there were myriad pedantic synonyms with the exactly same meaning, so I tried to visualise the relations between those words. I built this 3d dictionary during a break of GRE practice, so it's kind of harsh and may need some polishing, however, I don't want to retrospect the anguish of the old GRE days so I decided to postpone it indefinitely.">
+							<img src="images/dict.png" alt="img02"/>
+						</a>
+					</li>
+					<li class = "movie__card trans project__card">
+						<a href="http://192.168.50.184/~hs2657/game0845-find_Lehman/index.html" data-largesrc="images/lehman2.jpg" data-title="Find Professor Lehman" data-description="It is exclusive for NYU students. One proud thing during my college years is the viruses-like spreading of this find Lehman game among our NYU Shanghai students. During our freshmen year, every Monday 9:45am, all 300 of the NYU Shanghai students have to attend this core class -- Global Perspective on Society, lectures led by our dear chancellor Lehman, and the class is, I have to admit, soporific...so I made this game for some fun(not during lecture though), and it was even tested by professor Lehman during our IMA final show. The picture is he using the game ending screenshot for attendence.">
+							<img src="images/lehman.png" alt="img03"/>
+						</a>
+					</li>
+
+
+				</ul>
+			</div>
+		</div><!-- /container -->
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="../FutureReality/js/grid.js"></script>
+		<script src="../FutureReality/js/jquery.hover3d.min.js"></script>
+
+		<script>
+			$(function() {
+				Grid.init();
+			});
+            $(".movie__card").hover3d({
+                selector: "img",
+                shine: true,
+                sensitivity: 15,
+            });
+
+		</script>
+	</body>
+</html>

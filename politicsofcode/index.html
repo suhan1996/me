@@ -1,0 +1,722 @@
+<!--PEN CODE-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Politics of Code Blog</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo_sh_2.png" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <link rel='stylesheet' href='//fonts.googleapis.com/earlyaccess/kopubbatang.css'>
+
+    <style>
+        ::-moz-selection { /* Code for Firefox */
+            color: red;
+            /*background: yellow;*/
+        }
+
+        ::selection {
+            color: red;
+            /*background: yellow;*/
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.4em;
+            color: #222;
+            background: white;
+            font-family: 'Lato', sans-serif;
+
+            font-weight: lighter;
+        }
+
+        img{
+            box-shadow: 2px 20px 40px 10px rgba(0,0,0,.15);
+            max-width:90%;
+            /*width: 80%;*/
+            display: block;
+            margin: auto;
+            margin-bottom: 4vmax;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Grid */
+
+        .section {
+            clear: both;
+            padding: 0;
+            margin: 0;
+            align-content: center;
+        }
+        h2{
+            margin-bottom: 4vmax;
+        }
+
+        .col {
+            /*width: 50%;*/
+
+            display: block;
+
+            margin: 1% 0 1% 1.6%;
+        }
+        .col:first-child { margin-left: 0; }
+
+        .span_3_of_3 {
+            width: 100%;
+        }
+        .span_2_of_3 {
+            /*width: 66.1%;*/
+        }
+        .span_1_of_3 {
+            /*width: 32.2%;*/
+        }
+
+        /* Header & Navigation */
+
+        header{
+            max-width: 100%;
+            background: #222; /*FallBack*/
+            background: white;
+            padding: 20px;
+        }
+
+        nav{
+            margin-bottom: 1em;
+            /*background: #323232;*/
+            font-weight: 100;
+            font-family: 'KoPub Batang';
+        }
+
+        .logo{
+            text-align: center;
+            color: #fff;
+            font-size: 3em;
+            font-weight: 100;
+            font-family: 'KoPub Batang';
+        }
+
+        ul{
+            padding: 0;
+            margin: auto;
+            overflow: hidden;
+            color: gray;
+            /*text-align: center;*/
+            -webkit-transition: max-height 0.5s;
+            transition: max-height 0.5s;
+        }
+
+        #ttl{
+            /*width: 1280px;*/
+            font-size: 1.4em;
+            padding: 20px;
+
+            -webkit-transition: background .5s;
+            transition: background .5s
+        }
+        .nav-item1{
+            text-align: center;
+            padding: 20px;
+            font-size: 1.4em;
+            -webkit-transition: background .5s;
+            transition: background .5s
+        }
+
+        #ttl:hover{
+            /*background: #474747;*/
+            color:red;
+            cursor: default;
+            transition: 1.5s;
+        }
+
+        .menu-bar{
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+            background: white;
+            text-align: left;
+            padding: 15px 20px;
+            color: #fff;
+            font-size: 1.4em;
+            cursor: pointer;
+            display: none;
+        }
+
+        .hamburger-icon{
+            float: right;
+            clear: both;
+            margin-top: -5px;
+            font-size: 1.4em;
+        }
+
+        /* Blog Posts */
+
+        .container{
+            align-content: center;
+            /*max-width: 1020px;*/
+            margin: 0 auto;
+            /*padding: 20px;*/
+        }
+
+
+.blog-post-ttl{
+    align-content: center;
+    width: 1280px;
+    margin: auto;
+}
+        .blog-post{
+            align-content: center;
+            width: 1280px;
+            margin: auto;
+            background: white;
+            margin-top: 5vmax;
+            border-right: 5vmax;
+            border-left: 5vmax;
+            margin-bottom: 2em;
+            padding-top: 2vmax;
+            /*padding-right: 2vmax;*/
+            /*padding-left: 2vmax;*/
+            padding-bottom: 2vmax;
+            /*box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.3);*/
+        }
+
+        .side-post{
+            background: #fff;
+            margin: 0 auto 1.5em auto;
+            width: 15em;
+            padding: 20px;
+        }
+
+        .blog-content{
+            letter-spacing: 1px;
+            line-height: 160%;
+            margin-left: 5vmax;
+            margin-right: 5vmax;
+            font-size: 0.9em;
+            /*font-family: 'KoPub Batang';*/
+
+            border-left: 1px solid rgba(0,0,0,0.1);
+            padding-left: 15px;
+        }
+
+        .side-content{
+            font-size: .9em;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .blog-title{
+            text-align: center;
+
+            font-size: 2.5em;
+            font-weight: lighter;
+            margin-top: 5px;
+        }
+
+        .date{
+            text-align: center;
+            font-family: 'KoPub Batang';
+
+            font-size: 1em;
+            font-weight: 100;
+            color: #9C9C9C;
+            /*text-decoration: blink;*/
+            text-decoration-color: currentColor;
+        }
+
+        .post-link{
+            margin-left: 5vmax;
+            color: deepskyblue;
+            font-style: italic;
+            transition: all 0.4s;
+        }
+
+        .post-link:hover{
+            color: dodgerblue;
+            text-decoration: underline;
+            text-decoration-color: currentColor;
+            cursor: pointer;
+        }
+
+        /* Button */
+
+        .button{
+            display: block;
+            padding: 15px 20px;
+            margin-top: .8em;
+            background: #009ACD;
+            text-align: center;
+            color: #fff;
+            font-size: 1.4em;
+            border-radius: 3px;
+            transition: all .4s ease-in;
+        }
+
+        .button:hover{
+            background: #005c7b;
+        }
+
+        /*Media Queries*/
+
+        /* @900px*/
+        @media only screen and (max-width: 56.25em) {
+            .col{ margin: 1% 0 1% 0%;}
+            .span_3_of_3, .span_2_of_3, .span_1_of_3{ width: 100%; }
+            .side-post{ width: 42%;
+                float: left;
+                margin: -2% 0 1% 1.6%;}
+        }
+
+        /* @685px*/
+        @media only screen and (max-width: 42.813em) {
+            .side-post{ width: auto;
+                padding: 15px;
+                margin: -2% auto 8% auto; }
+            .blog-title{ font-size: 1.95em; }
+            .date{ font-size: .9em; }
+        }
+
+        /* @480px */
+        @media only screen and (max-width: 30em){
+            nav ul{ max-height: 0; }
+            .reveal{ max-height:19em; }
+            nav ul .nav-item{ -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                box-sizing: border-box;
+                width:100%;
+                padding: 15px; }
+
+            .menu-bar{ display: block; }
+
+        }
+
+        /* @380px*/
+        @media only screen and (max-width: 23.75em) {
+            .blog-content, .post-link{ font-size: .9em; }
+            .side-content{ font-size: .8em; }
+            .button{ padding: 10px 15px; }
+            .nav-item{ font-size: 1.2em; }
+        }
+        .sticker {
+            margin-left: 0.8vmax;
+            position: fixed;
+
+            width: 60px;
+            height: 60px;
+        }
+
+        .example-1 .sticker-img {
+            z-index: 100;
+            position: fixed;
+            /*background-color: rgba(0,0,0,0.01);*/
+
+            background-image: url(images/logo_sh.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .example-2 .sticker-img {
+            background-color: #ff4a85;
+        }
+
+        .example-2 .sticker-shadow {
+            opacity: 0.6;
+        }
+        .wechathidden{
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<!--<img src="images/logo_sh.png">-->
+
+<div class="sticker example-1"></div>
+
+<!--<div class="sticker example-2"></div>-->
+
+<script >(function(){var m,b=null,h=["webkit","Moz","ms","O"],d="all 0.6s cubic-bezier(.23,1,.32,1)",j="all 0s",e=document.createElement("style");e.appendChild(document.createTextNode("    .shadowL {background: -moz-linear-gradient(right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.01) 1%, rgba(0,0,0,0.7) 100%);background: -webkit-gradient(linear, right top, left top, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0.01)), color-stop(100%,rgba(0,0,0,0.7)));background: -webkit-linear-gradient(right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: -o-linear-gradient(right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: -ms-linear-gradient(right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: linear-gradient(to left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);}    .shadowR {background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.01) 1%, rgba(0,0,0,0.7) 100%);background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0.01)), color-stop(100%,rgba(0,0,0,0.7)));background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: -o-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);}    .shadowB {background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.01) 1%, rgba(0,0,0,0.7) 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0.01)), color-stop(100%,rgba(0,0,0,0.7)));background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);}    .shadowT {background: -moz-linear-gradient(bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.01) 1%, rgba(0,0,0,0.7) 100%);background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0.01)), color-stop(100%,rgba(0,0,0,0.7)));background: -webkit-linear-gradient(bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: -o-linear-gradient(bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: -ms-linear-gradient(bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);background: linear-gradient(to top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.7) 100%);}"));document.head.appendChild(e);function o(u,v){var t=u.style,q,r;v=v.charAt(0).toUpperCase()+v.slice(1);for(r=0;r<h.length;r++){q=h[r]+v;if(t[q]!==undefined){return q}}if(t[v]!==undefined){return v}}function i(q,s){for(var r in s){q.style[o(q,r)||r]=s[r]}}function g(q,s){var r=document.createElement(q||"div");i(r,s);return r}function k(w,x,u){var t=x.x,s=x.y,r=w.pageX-t,q=w.pageY-s,v;if(r<u){v=0}else{if(r>u*3){v=1}else{if(q<u){v=2}else{v=3}}}return v}function n(v,z,C){var r=z.x,q=z.y,t=v.pageX-r,s=v.pageY-q,B,A=C-t,y=C-s,x=t>>1,w=s>>1,v=A>>1,u=y>>1;if(m==0){B={bx:-C,by:0,sx:-1,sy:1,bs:"shadowL",bmx:-C+t,bmy:0,bsw:t,bsh:C,bsx:A,bsy:0,cw:C-x,ch:C,cx:x,cy:0,dw:x,dh:C,dx:x-(x>>1),dy:0}}else{if(m==1){B={bx:C,by:0,sx:-1,sy:1,bs:"shadowR",bmx:t,bmy:0,bsw:A,bsh:C,bsx:0,bsy:0,cw:C-v,ch:C,cx:0,cy:0,dw:v,dh:C,dx:C-A+(v>>1),dy:0}}else{if(m==2){B={bx:0,by:-C,sx:1,sy:-1,bs:"shadowT",bmx:0,bmy:-C+s,bsw:C,bsh:s,bsx:0,bsy:y,cw:C,ch:C-w,cx:0,cy:w,dw:C,dh:w,dx:0,dy:w-(w>>1)}}else{B={bx:0,by:C,sx:1,sy:-1,bs:"shadowB",bmx:0,bmy:s,bsw:C,bsh:y,bsx:0,bsy:0,cw:C,ch:C-u,cx:0,cy:0,dw:C,dh:u,dx:0,dy:C-y+(u>>1)}}}}return B}function f(r,w){var y=w.container.getBoundingClientRect(),q={x:y.left+window.pageXOffset,y:y.top+window.pageYOffset};m=k(r,q,w.sizeQ);b=n(r,q,w.size);b.pos=q;var t=b.bx,s=b.by,v=b.sx,u=b.sy,x=b.bs;w.backShadow.className=w.depth.className="sticker-shadow "+x;i(w.mask,{transition:j,width:w.size+"px",height:w.size+"px",transform:"translate("+0+"px, "+0+"px)"});i(w.move,{transition:j,transform:"translate("+0+"px, "+0+"px)"});i(w.back,{transition:j,transform:"translate("+t+"px, "+s+"px)"});i(w.backImg,{transform:"scaleX("+v+") scaleY("+u+")"});i(w.depth,{transform:"translate("+-10000+"px, "+-10000+"px)"})}function l(s,q){if(b==null){return}var t=b.bx,r=b.by;i(q.mask,{transition:d,width:q.size+"px",height:q.size+"px",transform:"translate("+0+"px, "+0+"px)"});i(q.move,{transition:d,transform:"translate("+0+"px, "+0+"px)"});i(q.back,{transition:d,transform:"translate("+t+"px, "+r+"px)"});i(q.depth,{transform:"translate("+-10000+"px, "+-10000+"px)"});b=null}function a(A,E){if(b==null){f(A,E);window.document.addEventListener("mouseup",function(H){this.removeEventListener("mouseup",arguments.callee,false);l(H,E)},false)}var C=n(A,b.pos,E.size),w=C.bmx,v=C.bmy,u=C.bsw,D=C.bsh,t=C.bsx,s=C.bsy,z=C.cw,r=C.ch,y=C.cx,x=C.cy,q=C.dw,B=C.dh,G=C.dx,F=C.dy;i(E.mask,{width:z+"px",height:r+"px",transform:"translate("+y+"px, "+x+"px)"});i(E.move,{transform:"translate("+-y+"px, "+-x+"px)"});i(E.back,{transform:"translate("+w+"px, "+v+"px)"});i(E.backShadow,{width:u+"px",height:D+"px",transform:"translate("+t+"px, "+s+"px)"});i(E.depth,{width:q+"px",height:B+"px",transform:"translate("+G+"px, "+F+"px)"})}var c={init:function p(t){if(typeof t==="string"){var D=document.querySelectorAll(t),w,A=D.length;for(w=0;w<A;w++){p(D[w])}return}var C,z=t.getBoundingClientRect(),F=z.width,x=F>>2,q=g("div",{position:"relative",width:F+"px",height:F+"px",overflow:"hidden"}),E=g("div",{position:"relative",width:F+"px",height:F+"px",overflow:"hidden"}),s=g("div",{position:"relative",borderRadius:"50%",width:F+"px",height:F+"px",overflow:"hidden"}),r=g("div",{position:"relative",borderRadius:"50%",width:F+"px",height:F+"px",zIndex:1}),v=g("div",{position:"absolute",borderRadius:"50%",width:F+"px",height:F+"px",left:"0",top:"0",zIndex:3,backgroundColor:"#ffffff",transform:"translate("+F+"px, "+0+"px)",overflow:"hidden"}),B=g("div",{position:"relative",borderRadius:"50%",width:F+"px",height:F+"px",opacity:"0.4"}),y=g("div",{position:"absolute",width:F+"px",height:F+"px",left:"0",top:"0",zIndex:4}),u=g("div",{position:"absolute",width:F+"px",height:F+"px",left:"0",top:"0",zIndex:1});r.className="sticker-img sticker-front";B.className="sticker-img sticker-back";y.className=u.className="sticker-shadow";t.appendChild(q);q.appendChild(E);E.appendChild(s);s.appendChild(r);s.appendChild(u);s.appendChild(v);v.appendChild(B);v.appendChild(y);C={container:q,size:F,sizeQ:x,mask:E,move:s,depth:u,back:v,backImg:B,backShadow:y};t.addEventListener("mouseenter",function(G){f(G,C)},false);t.addEventListener("mouseleave",function(G){l(G,C)},false);t.addEventListener("mousemove",function(G){a(G,C)},false);return this}};if(typeof exports=="object"){module.exports=c}else{if(typeof define=="function"&&define.amd){define(function(){return c})}else{this.Sticker=c}}})();</script>
+
+<script type="text/javascript">
+    window.onload = function() {
+        Sticker.init('.sticker');
+    }
+
+</script>
+
+
+
+
+<script>
+    $('.menu-bar').on('click', function(){
+        $('nav ul').toggleClass('reveal');
+    });
+    $('.sticker').on('click', function(){
+        window.location = "http://hansu.studio";
+    });
+</script>
+<!--<header>-->
+    <!--<h1 class="logo">Logo</h1>-->
+<!--</header>-->
+
+
+
+<div class="container">
+    <div class="blog-post-ttl">
+
+    <h1 class="blog-title" id="ttl">Politics of Code Blog</h1>
+    </div>
+    <div class="section">
+        <div class="col span_2_of_3">
+            <div class="blog-post">
+                <h1 class="blog-title">Signal-to-noise Ratio in Social Media
+
+                </h1>
+                <h2 class="date">Thought | 1st Jan 2018</h2>
+                <p class="blog-content">
+                    Internet has brought everyone to the same place, like facebook, twitter .etc. Ideally, everyone’s voice could be heard by everyone else, but that’s obviously not true. The biggest problem in a public social media platform is how to filter out the noise, i.e. catering for the user with newsfeed specially designed for them with the recommendation algorithm. The filter bubble also leads to numerous problems of limitations of information sources and self-perpetuation of certain values. Social media is evolving towards a more efficient and personalised direction, therefore imperfections in social media are inevitable within the process. However, to ensure a natural and smooth evolution, social media platforms should adapt a user opt-in design instead of a default algorithm which takes away user freedom.
+
+                </p>
+                <p class="blog-content">
+                    Before we come to the opt-in design, I’d briefly talk about whether social media should be private or public. As we know, most companies started from a website like Facebook, Twitter and numerous blogs are open to the public by default. However, mobile social media platform like WhatsApp, WeChat and Snapchat are more leaning to a closed circle. Should there be a strict nature of Social Media? My answer is YES. Even though there could be opt-in and opt-out distinctions on privacy, as long as we categorized an application as a social media platform, there should be a path to find the public. Hence, the feasibility to know new people is important for a social media platform, and therefore I don’t categorize WhatsApp as a social media platform even though it is the most globally popular messaging app.
+
+                </p>
+                <p class="blog-content">
+                    On one hand, there are public platforms like Reddit, Quora .etc, where people don’t need to follow anybody to see there posts. In this first scenario, the signal-to-noise ratio maybe high, but neutrality is ensured. On the other hand, on Facebook or Twitter, your followers and your history will decide the input of your information. The recommendation algorithm may keep a low signal-to-noise ratio on the post you’d love to read, but the social bubble is also formed thereof. When comes to social media content, it is necessary to distinguish the content produced by your friends and the contend produced by the public. Public contents should NOT only from public pages/accounts, every post the user set with public accessibility should get into the public category. In terms of recommendations, I think the significance of the topic is overlooked. A very good design in my mind is Zhihu’s recommendation on a article, in which the site will tell you the reason of this recommendation and you have the right to unlike this recommendation.
+                </p>
+                <p class="blog-content">
+                    To conclude, the baseline of the algorithm’s capability to reduce signal-to-noise ratio should not affect its users’ exposure to the general public. Moreover, the user should have an opt-in right to decide what the algorithm is recommending to the homepage.
+                </p>
+
+
+            </div>
+
+            <div class="blog-post">
+
+                <h1 class="blog-title" >Webber and Feedback</h1>
+                <h2 class="date">Project | 5th Dec 2017</h2>
+                <img src="images/lg_webber.png">
+                <img src="images/ss_webber.png">
+
+                <p class="blog-content">
+                    Here's the <a style="color:red" href="https://chrome.google.com/webstore/detail/webber/hacdibepahooimpocgngngmpiofacikb">Webber Chrome Extension 1.11, as a minimum viable version.</a>
+                </p>
+                <p class="blog-content">
+                    I tested with 3 of my friends, Ray and Sunyi are non-experts, Henry is a techie.
+                </p>
+                <p class="blog-content">
+                    Sunyi: I love it overall, it's like reddit with every website as a topic. It'll be great if this can be login with Facebook, then there could be a choice of only seeing posts from my friends rather than everybody. Or there could be choices to see everyone's post or just see my friends'.
+                </p>
+                <p class="blog-content">
+                    Ray: I see once I post I can't change it. Could there be a function to change my post? Could there be more colors?
+                </p>
+                <p class="blog-content">
+                    Henry: There could be a username for everybody or anonymous. I would use it on NYUClasses, it's a good way to talk about our homework. There could also be other information on the top, like hashtags or visiting trend of the site, there could be more than one sections. I think there will lots of users so it's also good go have friends.
+                </p>
+                <a href="https://chrome.google.com/webstore/detail/webber/hacdibepahooimpocgngngmpiofacikb" class="post-link">See it here...</a>
+
+
+            </div>
+
+            <div class="blog-post">
+                <h1 class="blog-title">Technology’s Role on Human Development
+
+                </h1>
+                <h2 class="date">Thought | 24st Nov 2017</h2>
+                <p class="blog-content">
+                    Will the development of technology bring us a better society with more equality, human dignity and life opportunities? Or will it magnify the flaws of the society, and as a result, accelerate the extinction of human being?
+
+                </p>
+                <p class="blog-content">
+                    My overall attitude on the development of technology is optimistic. The development of technology is part of the mankind’s historical process. Therefore, the progress of technology development also represents the development process of the mankind. Is development itself a good thing? That’s not a yes or no question. Every creature will grow up, get old and cease to death. The practical thing is not questioning if we will die in the end, but learning about how to avoid potential dangers and prevent a “premature death”.
+
+                </p>
+                <p class="blog-content">
+                    I’d like to discuss two factors that could cause “premature” human extinction. War and environmental issues. Technology plays a quite important role on both issues. The essence of war is conflicts of interests groups. The realization of a worldwide human community is the ultimate solution to the war of tragedy of commons. Since the interest of human community should prioritize over any sub-group. The biggest obstacle now is that today’s decision of war are in the hands of political groups, and the leaders of a country are usually myopic since their foremost job is to strive for the interest of a country instead of the whole human kind.  The solution is quite easy—more communications between people in different polities. The ultimate power to control the society is still from every individual, with the development of technology like internet, firstly, people in the world will be more interconnected to each other; secondly, internet provides a more efficient way for individual’s participation in decision making. Like the recent spreading of objections Net Neutrality on social media serves a good example. Hence, I’m positive on technology’s role on promoting communication and preventing war. I’m much more concerned about environmental issues. Environmental issues could be categorized as a kind of tragedy of commons. Therefore, a human community is still the ultimate solution to prevent doing harm to our shared environment. Moreover, I believe the computer will soon be better at predicting the sustainability than human experts. I’m looking forward to the future of exascale supercomputing, which means a machine could perform 1,000,000,000,000,000,0000 operations per second, in this way, lots of hard problems today could be deems as a easy problem in the future that could be solved quickly.
+                </p>
+                <p class="blog-content">
+                    I also have some thoughts on AI related topics, I’ll write it in the future with further detailed explanations, but my attitude is still optimistic.
+                </p>
+
+
+            </div>
+
+
+            <div class="blog-post">
+                <h1 class="blog-title">Who Decides Ownership
+                </h1>
+                <h2 class="date">Thought | 21st Nov 2017</h2>
+                <p class="blog-content">
+                    The invention of property and capital oriented social ideology represent the beginning of moral inequality, and the internet is the solution for this big problem, the first step is to redefine property.
+
+                </p>
+                <p class="blog-content">
+                    Copyright is among one of the most argued topics in the history. I think in the internet era, there will be fundamental changes in terms of copyright and ownership. All materials and knowledges will be transformed into a abstract form — data. in this way, everything “digitalizable” will be ideally shared among all the people equally and freely.
+
+                </p>
+                <p class="blog-content">
+                    But the problem is who will decide how the data is shared? In today’s world, Copyright is the right entry to refer to. Copyright is a law term, it grants the author the rights to determine the use and distribution of the work. However, copyright itself is aimed to protect the interests of the creator. In today’s capitalized world, people may get commercial benefits from copyrights. However, in the internet, most activities are not capital motivated; the interest of the neitizen will return to basic rights and freedom.
+                    Moreover, as Lawrence Lessig said in Intellectual Property, “the right to browse should be the norm, and the burden to lock doors should be placed on he owner”. Every netizen on the internet should have equal rights on the access of public information. At the same time, there could be private data that the owner could decide who can access.
+                </p>
+                <p class="blog-content">
+                    In summary, in the internet era, only data in private space are property owned by the creator, and all data in the public space are shared by all human beings. However, the real problem would then be boiled down the definition of private and public in the internet era. One good example of private space is a private cloud space like google drive, where users decide who can get access to the space. But there is no eternal private property as long as there is a possibility on people who have access to the private space can share the information in a certain way. Linked Data Platform is a good way to let the users have full control over its own data, like data generated on social media; even data are published on a public space where everyone can see, the creator of the data still could modify or delete it, but at the same time everyone online could also save what he/she is seeing.
+                </p>
+
+
+            </div>
+
+            <div class="blog-post">
+                <h1 class="blog-title">On Technology Unemployment</h1>
+                <h2 class="date">Thought | 13th Nov 2017</h2>
+                <p class="blog-content">
+                    Automation is reducing the need for people in many jobs. Are we facing a future of stagnant income and worsening inequality?
+                </p>
+                <p class="blog-content">
+                    I’d say we should hold the expect for an overall better off society with the help of AI, however, inequality is definitely a big problem, just as 21 Century Capitalism pointed out. If AI is replacing most human labors, or simple even programming jobs, the company providing the AI service will be the biggest beneficiary. Human will work more on jobs strongly connected with human interactions, there will also be numerous new jobs created by the market needs.
+
+                </p>
+                <p class="blog-content">
+                    In terms of inequality, it is quite important to make sure the basic civic rights are under guarantee, therefore, a socialist government will be more popular among people. Mars believed the violent revolution is necessary for proletariats to get their civil rights. I don’t quite agree on it, because the productivity will be freed by AI, and a peaceful evolution could be expected when resources are not limited to a group.
+                </p>
+                <p class="blog-content">
+
+                </p>
+
+            </div>
+
+
+                <div class="blog-post">
+                    <h1 class="blog-title">Defining Intelligence
+                    </h1>
+                    <h2 class="date">Thought | 6th Nov 2017</h2>
+                    <!--<img style="width: 50%" src="images/nyuadforum.PNG">-->
+                    <p class="blog-content">
+                        AlphaGo gained its fame on beating Human Go players by using a deep neural network to learn how to play Go. But it’s training data are still from human players in the first step, however, the very recent piece of news shows that AlphaGo Zero could beat all its previous version without any data from human.                     </p>
+                    <p class="blog-content">
+                        Learning without training data from human is definitely groundbreaking, it means the machine has earned its own intelligence, and that’s probably why it’s call AlphaGo Zero. Deep learning these days still requires huge amount of training data, and most of the data are marked by human. We could say that most AI today is still based on human’s conception of the world, and thereby solving problems with the limitation of human’s need. We created Artificial Intelligence to serve better good, but we don’t necessarily train the AI in our way of understanding, since AI and human are fundamentally different.
+                    </p>
+                    <p class="blog-content">
+                        If we compare lives to machines, the purpose of human and all other beings is to prolong their species, and we are doing these in different ways. We can only describe the behaviors of a living being, but we can never do as what other species are doing. For example, even the most rudimentary organism like slime mold, has its own intelligence to prolong its life, and they are totally different from other multicellutar organisms. Hence, I’d define intelligent machine as a system that could achieve a certain result. One rhetorical example would be a system with the purpose to live, all live beings are living because they successfully prolonged their existence. But how did they intelligently managed to do so?
+                    </p>
+                    <p class="blog-content">
+                    </p>
+                    <p class="blog-content">
+                    The thing we scientifically acknowledged is that all species have gone through mutations and natural selection to evolve to the present mode. Therefore, similarly for AI, the ideal way of training is only with selection criteria of successfully achieving human desired purpose, and let it freely evolves to the desired mode. Mutations are necessary, but we haven’t found an ideal start point, the deep learning nowadays starts from neural network, and we are adding mutations like adapting the Stochastic gradient descent.
+                    </p>
+                    <p class="blog-content">
+                        The neural networks today is doing a great job on specific category of problem solving, and therefore I’d call it partially intelligent. But if we are trying to make more intelligent AI, the AI program must also have a higher goal with greater question, rather than distinguishing 1,2,3.
+                    </p>
+                </div>
+                <div class="blog-post">
+                    <h1 class="blog-title">The Emancipation of the Slaves of Algorithms
+                    </h1>
+                    <h2 class="date">Thought | 30th Oct 2017</h2>
+                    <!--<img style="width: 50%" src="images/nyuadforum.PNG">-->
+                    <p class="blog-content">
+                        The common pattern of developments usually involves transitions from a primary state to a better but imperfect and unstable polarization state and finally towards a dynamic equlibrium. When social media was first introduced to people, those websites didn’t have much fancy algorithms or newsfeeds. RSS was the primary version of newsfeed and blog was the ancestor of social media. In that era, users are not strongly connected and information are not easily spread, we can’t do much with the limited functions provided. Nowadays, with more and more people get access to the internet, we have a more active social media environment with richer contents, however, the platforms we use are controlled by a handful of giant companies, we are all “users” of those companies. Most companies are using various algorithms to either provide a better user experience, or to get more accurate targets for advertisements. Yet the users are still “crippled” under this version of social contract. Mark Zuckerberg could say “Let’s promote organ donation”, and then makes Facebook add the function to notify a user’s friends if he or she decided to be a donor. That was a real campaign in 2012, and “organ donor enrollment increased by a factor of 23 across 44 states” according to official data. Moreover, the recommendation systems and newsfeed algorithms are intensifying the social bubble we are comfortable with, that’s simply not good for an independent individual who wants to control his own life.
+                    </p>
+                    <p class="blog-content">
+                        The ideal direction of social media should let the user make decisions, algorithms are important but the users should be able to get aware and control where the algorithms are leading themselves to. Moreover, the rights of the company should be the same with every user, including the access to the data and algorithms. In terms of algorithms, there’d be various choices that the users could decide which to use and where to apply them. The future of social media should not be limited to the screen, the real world or its simulation is the next stage; location and realtime communication will also matter much more than they are right now.
+                    </p>
+                </div>
+                <div class="blog-post">
+                    <h1 class="blog-title">Webber, A Chrome Extension for Electronic Civil Disobedience
+                    </h1>
+                    <h2 class="date">Project | 29th Oct 2017</h2>
+                    <!--<img style="width: 50%" src="images/nyuadforum.PNG">-->
+                    <p class="blog-content">The power on the internet is far from equally distributed yet, but it will eventually be, and I’m trying to promote this process.
+                    </p>
+                    <p class="blog-content">When a person post a comment under an article, the comment could be deleted by the page owner. There are various examples on how comments related to the government are deleted by censorship. The reasons are that data is in the control of the website owner, and the website is under censorship.
+                    </p>
+                    <p class="blog-content">The ideal design of Webber should be based on a Linked Data Platform, of which user has the full control over the data. The main purpose of Webber is to provide a platform for people on the same web page to communication and socialize, it also serves a role for Electronic Civil Disobedience where people could gather on the same page as in the form of a virtual demonstration.
+                    </p>
+                    <p class="blog-content"></p>
+                    <p class="blog-content">As we all acknowledged today, civil disobedience is aimed for institutional reform rather than national collapse; Hence, I don’t think it’s appraisable for any kind of hijacking or DDOS attacks. The contradicts here is a way to express people’s voice online against the effect it aroused, bring down a governmental or a company’s website is apparently “loud” enough, however, that’s not the proper way to get heard. Moreover, the audience cannot get a clear message on what’s happening when they get a bad request from the server.
+                    </p>
+                    <p class="blog-content">Hence, while reading the works related to Electronic Civil Disobedience, I came up with a design for free-expression without doing harm to the web service itself. It is a page-based commentator, every web page has an ID and everyone could leave a message on that page. There could be things like word could to show what people are saying on this website. The ideal assumption is the everyone will be using this app/browser. For example, when people are visiting the tax.ny.gov, on the left side of the browser there’ll be a column dedicated on what people are saying here, and you can also express what you want to say. In this way, voices could be heard without doing harm to the site itself.
+                    </p>
+                </div>
+            <div class="blog-post">
+
+                <h1 class="blog-title">We Are All WeChat Enchanted
+                </h1>
+                <h2 class="date">Article | 29th Oct 2017</h2>
+                <!--<img style="width: 50%" src="images/nyuadforum.PNG">-->
+                <p class="blog-content">WeChat is a giant social media platform developed by the founder of FoxMail Allen Zhang. FoxMail was acquired by Tencent in 2005, along with Allen Zhang’s transfer to Tencent—a leading internet company who plays an indispensable role in mainland China, with services covering social media, entertainments, news and numerous other fields. However, with all those services and convenience provided by Tencent, the company is infamously known as an immense monopoly power who bullies small startups, stealing ideas shamelessly, and holds an absolute power and censorship over its users. Of all those traits, WeChat, the most successful service of Tencent with 0.96 billion monthly active users, is a quintessential miniature of the company Tencent, as well as a reflection of the social order in mainland China.
+                </p>
+                <p class="blog-content">
+                    Tencent was founded in 1998, starting with an instant message program called OICQ, which later changed to its more well-know name — QQ, it was a mimic to the ICQ of Israeli. Just like QQ is from ICQ, WeChat is designed as an instant message app targeting at mobile phone users with the precedent success of WhatsApp. I wouldn’t say plagiarism should always be regarded as evil in terms of doing business, rather, copying is a quite established mode in the business world. As we all see today, though not designed originally, QQ and WeChat have both surpassed their “father” and have developed more functionalities which are bringing more profits than ICQ and WhatsApp. But a successful business does not mean a perfect service, especially when a giant company occupies a great portion of the market, its unbalanced power brings numerous problems.
+                </p>
+                <p class="wechathidden blog-content">
+                    When talking about social media in China, there isn’t a second company that could serve as a rivalry to Tencent, this gives Tencent the absolute power of controlling the industry. When everything is taken over, they don’t need to cater for the needs of a specific group of people, their only job is to make the mass feel satisfied and keep them using its services. Moreover, Tencent has the power to control users’ behaviors, with notorious methods like censorship and blocking the account, the processes of making decisions are vague to the pubic and all involved many human factors. Take WeChat public account for example, a relatively new feature is the public account, which serves as an blog-like open platform that all the users could subscribe and get notified when there is a new article. The open platform is a compensation of the introversive nature of WeChat, where you can only add friend by knowing their account rather than discovering it on the platform. When going into a article of the public account, you can see sometimes they have function of leaving a comment, or giving bonus to the author. However, not all public accounts have the feature to leave a comment, only when the account keeps publishing articles for a certain period, and without any misbehaviour, could it be eligible for comments and bonus features. For the recognition of eligibility, there is no public or outlined rule on how this reviewing process is done. Moreover, the displaying of comments is different from all other social media as well: only the author has the right to see all the comments and decided which comment could be seen by the public. As a result, more often than not, all comments under an article holds the same value that highly coordinate with the author’s. Human factor plays such a significant role here and power is granted unequally and vaguely, which is abnormal for a public social media application. The deep reason behind the phenomenon is the nature of an unbalanced distribution of power in the application itself, the powerful party controls its users, which is generally and negatively acquiesced by the mass who either drift along with the decisions or leave WeChat if you can.
+
+                </p>
+                <p class="wechathidden blog-content">
+                    As I mentioned, WeChat caters for its main group of users rather than the need of a specific group. The underlined value of WeChat also reflects the underlined value of the society. China has been in rapid development for nearly five decades, people’s living standards have definitely been improved to a great extent. While there’re also side-tradeoffs like environmental issues, corruptions, ignorance of individual’s rights. Chinese Communist Party is the ruling party since the establishment of People’s Republic of China, and there are no rival Parties. Therefore, the Communist Party and the Chinese citizens are still in a derived relationship of ruling and being ruled, though with more abundant resources and less direct conflicts of interests. Therefore, the Party officials still hold power over the people, and the official could control many things vaguely which are not publicly and clearly stated in law and regulations. The Communist Party does not want to take care of everything perfectly, otherwise there won’t be any progress, they believe Mao’s theology of “conquering the principal contradiction of the principal problem”, so they believe it is legit to ignore minor issues as long as they are making progress in the major field like economy, science and military. With an imperfect system, the Communist Party needs to firstly gain control over the people. To achieve this, the Communist Party expands itself to 80 million party members with 0.3 billion people within the members’ family kin. With a mass foundation, the Party is therefore not possible to get replaced at the first place.
+                </p>
+                <p class="wechathidden blog-content">
+                    Similarly, after gaining a good amount of users as an instant messaging application, WeChat decided to expand its functionality and assimilate other applications to become an entrance to the internet, or with some moderate exaggeration — the gate to life. Tencent knows that users cannot leave the application when it serves such an indispensable medium in their life. To achieve the ultimate goal, WeChat first added the functionality of a mobile browser. Users can share webpages in their moments, or scan a QR code to get access to the page, but they don’t have direct way to type an url and visit. As a result, QR code became a revolutionary thing in China, because of WeChat, QR code is much more prevalent in mainland China than in the rest of the world. Later on, WeChat Payment, along with AliPay, revolutionised the way of paying process. Basically everywhere you need to deal with money, you can see two QR codes for online money transfer, one is WeChat’s green, and the other one is AliPay’s blue, even a beggar has those two. Other following functions include ordering a taxi, getting food delivery, booking tickets, online shopping, though all of these functions are provided by the business partners of Tencent. Another ridiculer thing is that, sharing things from Jack Ma’s Taobao is blocked on WeChat, even if in the form of a link. To face this challenge, Taobao created an encrypted random string which WeChat cannot recognize, and once you copy it to your clipboard then open the Taobao app, you will be magically directed to the item shared by your friend. The convenience WeChat brings us definitely makes our live much easier, but at the same time, it makes people who doesn’t have a WeChat account feel odd and unfit in the society. In order to lead a normal life in China, we have to use WeChat, while most people do love WeChat and are getting so used to it as if they are WeChat enchanted. However, within the world of WeChat, the users have to align with the settings of the application—use the service of Tencent’s business partner, get censored by the government, the worst thing is that we can’t change it, and most of us take it for granted.
+                </p>
+                <p class="wechathidden blog-content">
+                    As notified in WeChat’s term of use, the app “has full permission to activate microphones and cameras, track your location, access your address book and photos, and copy all of this data at any time to their servers”. That’s a common request in most social media applications, however, WeChat needs to give all those data to the government. As the national-security law and the new cyber-security law granted, the government has access to almost all personal information of a user of WeChat and any other applications from a Chinese company. Rather than simply argue about privacy, I’d say the powerful party against subordinated party is the real issue here. If information regarded as non-privacy could be sent to the government, it should also be accessible by the general public. If the decision makers make laws imparting different power to itself and the public, it will isolate itself from the public to some extent, which is an undesired reality. For above analysis of WeChat’s characteristics, we finally come to the long-lasting topic of “structure versus agency”, the ability of an individual to act freely and independently is the essential meaning of agency, while in the circumstance of WeChat and Communist China, individuals are subjects subordinated to the system, they cannot live without the structure, and they cannot escape either since there doesn’t exit an alternative. Moreover, as things are in the control of an oligarchic group, the system endows rights unequally, while the mass are paralyzed and take the reality for granted, as long as their interests are not affected they will acquiesce to yield their rights to the decision makers. As a result, even though the whole group is becoming better off from an outsider’s perspective, there is actually no political participation from most people, they cannot act independently from the social structure but obey the will of the Big Brother.
+                </p>
+                <a id="wechat" class="post-link">Read More...</a>
+
+            </div>
+
+            <div class="blog-post">
+                <h1 class="blog-title">Public on the Internet
+
+                </h1>
+                <h2 class="date">Thought | 16th Oct 2017</h2>
+                <!--<img style="width: 50%" src="images/nyuadforum.PNG">-->
+                <p class="blog-content">In Michael Warner’s Publics and Counterpublics, the author discussed the definition of public and how public is formed. She mentioned internet briefly in the middle of the article. But with the giant change of the internet itself, the role it plays in our life is not what it was 15 years ago. Today, there is a special pubic in the internet.
+                </p>
+                <p class="blog-content">My thought is that internet helped to make a broader, more efficient, and more equal public, but still, there exists problems that the public is sometimes led be key opinion leaders, and people are not separated into social bubbles. Firstly, internet makes it possible for unsynchronized formation of public, we can see people’s comments and follow up our owns, in this way, the data in a public will increase to a great extent, therefore make it possible for new individuals to catch up the history of what happened. Moreover, internet makes strangers talk, in a traditional public, we don’t chat too deeply with strangers, but in terms of internet, discussion are consequently happened among people who don’t know each other, but that does not affect a meaningful discussion. Last but not least, internet make people get heard more equally than in traditional sense, if you got reason, your voice could be heard on the internet. In this way,   there will be less injustice in the whole public.</p>
+            </div>
+
+            <div class="blog-post">
+                <h1 class="blog-title">Surveillance and Democracy In The Internet</h1>
+                <h2 class="date">Thought | 2th Oct 2017</h2>
+                <!--<img style="width: 50%" src="images/nyuadforum.PNG">-->
+                <p class="blog-content">When there is power distribution, there is politics, when there is politics, there is no ideal democracy for every one. Internet is the most ideal medium for a democratic public sphere. However, as soon as the role of internet is big enough to be noticed by the government, surveillance and censorship will surely be adapted, either explicitly or secretly. What comes after would be propagandas and  governmental controls. The reason behind this is obvious, the powerful party will gain control over the weak one in a free environment. The Great Fire Wall of China, Hilary team’s slandering post on Trump, hypes by KOIs(key opinion leaders); All those are perfect examples for the non-democratic actuality in today’s internet. However, all those are derived from outside the internet, it uses internet a means of publication rather than communication. The difference between publication and communication is the later is between people with same voice to speak, and those who will be equally listened.
+                </p>
+                <p class="blog-content">Another thing I’d shortly discuss here is the difference between Social Contract and the latent law of the Internet. Internet is a simulation of the real world communication, hence, not a fully simulated world with limited resources and natural phenomenon. Moreover, the TCP/IP protocol determines the characteristics and limits of the Internet, just like the biological feature of the being determines the way it lives on this planet. Communication is ideally democratic, which is self-evident, therefore, internet is still the most promising environment for voices get heard equally. The problem today is the outside influence from a behindhand real world, where we still live under a powerful government who needs to get control. Anyway, in conclusion, I’m positive on the Internet itself, it still represents the most advanced means of communication, and I’m looking forward to some solutions to promote democracy on the internet.</p>
+
+            </div>
+            <!--<div class="blog-post">-->
+                <!--<h1 class="blog-title">New Project Idea: NYUAD Massrater</h1>-->
+                <!--<h2 class="date">Thought | 27th Sep 2017</h2>-->
+                <!--&lt;!&ndash;<img style="width: 50%" src="images/nyuadforum.PNG">&ndash;&gt;-->
+                <!--<p class="blog-content">Massrater will be a open rating section on the forum, on rating classes, professors, D2 Wednesday dishes .etc</p>-->
+                    <!--&lt;!&ndash;<a href="https://nyuadforum.herokuapp.com" class="post-link">See it here...</a>&ndash;&gt;-->
+            <!--</div>-->
+        </div>
+            <div class="blog-post">
+                <h1 class="blog-title">NYUAD Ecoherence Forum</h1>
+                <h2 class="date">Project | 27th Sep 2017</h2>
+                <img style="width: 50%" src="images/nyuadforum.PNG">
+                <p class="blog-content">NYUAD Ecoherence Forum is a project designed for NYU Abu Dhabi students to talk about the campus environment problems and advices, but the topics are not limited, you can post freely here anonymously.</p>
+                <a href="https://nyuadforum.herokuapp.com/about" class="post-link">See it here...</a>
+            </div>
+        </div>
+
+            <div class="blog-post">
+                <h1 class="blog-title">Models of Computing</h1>
+                <h2 class="date">Thought | 25th Sep 2017</h2>
+                <p class="blog-content">Perhaps the most important difference between human and computer is the existence of conflicts of perceived logic; human could also be deemed as a machine which has perception on the environment. But the way it perceives the world is not obvious to us, that’s why it’s hard to simulate a omnipotent AI; Recently, deep learning has developed swiftly thanks to the computation power of today’s machine, however, that’s still different from how a real person perceives the environment. In a ascending order of complexity, I’d put the perception ability of inputs in this way: machine language, programming language, traditional machine learning algorithms, deep neural networks, human languages. With a very basic turning machine, you can only put certain order to do certain job, and the model to solve a job is called an algorithm, which is not derived from the machine it self. This kind of computation involves to Machine Learning Algorithms, which could have multiple inputs of data in a certain format, then produces predictions based on probability; This is one step closer to human perception, but still, way more basic than human. I’d compare the ML algorithm with paramecium, a little being who has only one cell, but can make reactions to the environment; From one cell to multiple cells would be the next step, cell here could refer to one basic computing unit. But the communication between those cells is yet to be found, and that’ll be advent of real AI.</p>
+                <a href="#" class="post-link">Read More...</a>
+            </div>
+
+            <div class="blog-post">
+                <h1 class="blog-title">The Righteousness of Human in The Loop</h1>
+                <h2 class="date">Thought | 18th Sep 2017</h2>
+                <p class="blog-content">Tay was an artificial intelligence chatterbot that was originally released by Microsoft Corporation via Twitter on March 23, 2016, but was shut down in 16 hours after its launch due to its racist tweets, however, all the language of Tay was learnt from the real users of the internet. We could shut down an AI, but can we ban people from expressing themselves? We can see a conflict between the censorship of wrong doing and the freedom of express here.</p>
+                <p class="blog-content">Another interesting example is the gender bias of NLP, like the title of one paper noted “Man is to Computer Programmer as Woman is to Homemaker”, the author proposed one human in the loop solution, which is to modify the algorithm by human: “we provide a methodology for modifying an embedding to remove gender stereotypes”. I would say the ultimate version of the AI with the fixed algorithm will be a political perfectly correct AI, whose language will have no bias, and surely derived from a real person. However, that does not mean I am against this type of political correct AI, rather, I’d use the notion of publicity to determine how “politically correct” an AI should be.</p>
+                <p class="blog-content">Take the judicial AI for example, in this case, the data processed should be with absolute publicity, that means without any bias. Race will not be a factor to weigh the possibility of criminal. In terms of chatbot, it cannot be too non-biased, because the users are usually a private group with a specific ideology. However, I’d propose a test on the extremity, the specific algorithm should be about weighing of the extremity of some expression and then decide whether the expression is harmful. Hence, a little-biased bot is doable, and the extent of non-biasedness should be determined by the publicity of the environment. </p>
+                <a href="#" class="post-link">Read More...</a>
+            </div>
+
+            <div class="blog-post">
+                <h1 class="blog-title">Code As A Product</h1>
+                <h2 class="date">Thought | 10th Sep 2017</h2>
+                <p class="blog-content">Every production process has some basic rules to follow, regarding to the rules of coding, data structures is the fundatmental knowledge. So all codes are made of some basic units, like "lists tuples queues sequences dictionaries hashtables", and all actions could be down with "sort search swap increment group match". If one knows those notions mentioned above, the coding world will not be a mysterious world. In terms of the nature of software, Rob Kitchin and Martin Dodge discussed the viability of human control, the basic idea of their writing is that it is we human who is coding, programming is a “performative and negotiable” process. In another article by Wendy Hui Kyong Chun, Gray Room, the main concept delivered is the “immaterial” program is influenced by “ideology”. While in the A Declaration of Independence of Cyberspace, John Perry Barlow, the author believes that internet is an ultimately free world of minds and without physical chains. Obviously, the internet is without physical chains, but that does’t mean it’s an equal and ideal space for public sphere, at least not in today’s internet. The classic notion of public sphere by Habermas is criticized by Nancy Fraser in Rethinking the Public Sphere, she basically said the classic idea of public sphere is not tenable in late 20th Capitalist world because we ignored the inequality issue. I agree with that point, and same in the internet today, we are using platforms which is run by private companies, that’s where the power lies. Big companies is controlling the internet similar to the monopoly in the 20th century Capitalist world. However, I am still optimistic with the future of internet, especially looking forwards to the day when the threshold of programming is lowered to everyone to participate, hopefully AI is the solution, and that will be a more equal world of internet.
+                </p>
+                <a href="#" class="post-link">Read More...</a>
+            </div>
+
+            <div class="blog-post">
+                <h1 class="blog-title">Arabic Star Format</h1>
+                <h2 class="date">Project | 10th Sep 2017</h2>
+                <img src="images/nyuad.jpg">
+                <p class="blog-content">Code should be in a certain format, another good-formatted thing I recently noticed are those arabic star-like patterns. Arabic people are fond of repetition, like the language itself, when one says "Sabah el-khair" the other replies "Sabah en-noor", it's like ping-pang, when one thing is generated, some other similar thing is followed. The same philosophy could be found in the islamic star like patterns, like the NYU AD logo, which is consisted with four torches reflected to each other, the interesting thing of this logo is that it could extend, to a infinity surface. So I made a website to draw this kind of repetitive patterns. </p>
+                <a href="https://suhan1996.github.io/StarPatternsGenerator/" class="post-link">See it here...</a>
+            </div>
+
+            <div class="blog-post">
+                <h1 class="blog-title">24 Characters</h1>
+                <h2 class="date">Project | 9th Sep 2017</h2>
+                <img src="images/24image.png">
+                <p class="blog-content">The 24 Characters make up twelve words, namedly the "Core Socialist Values", and have been endorsed by the Party. When I in Beijing, I saw the 24 characters on streets; When I in Urumqi, I saw the 24 characters on buses; When I in Shanghai, I saw the 24 characters on buildings; When I back home, still, I see the 24 characters on TV. Here's the translation of the 12 words: Prosperity    Democracy    Civility    Harmony    Freedom     Equality    Justice    Rule of Law    Patriotism    Dedication    Integrity    Friendship</p>
+                <a href="http://suhan1996.github.io/24Chars" class="post-link">See it here...</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!--<div class="blog-card">-->
+    <!--<div class="photo photo1"></div>-->
+    <!--<ul class="details">-->
+        <!--<li class="author"><a href="#">John Doe</a></li>-->
+        <!--<li class="date">Aug. 24, 2015</li>-->
+        <!--<li class="tags">-->
+            <!--<ul>-->
+                <!--<li><a href="#">Learn</a></li>-->
+                <!--<li><a href="#">Code</a></li>-->
+                <!--<li><a href="#">HTML</a></li>-->
+                <!--<li><a href="#">CSS</a></li>-->
+            <!--</ul>-->
+        <!--</li>-->
+    <!--</ul>-->
+    <!--<div class="description">-->
+        <!--<h1>Learning to Code</h1>-->
+        <!--<h2>Opening a door to the future</h2>-->
+        <!--<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>-->
+        <!--<a href="#">Read More</a>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="blog-card alt">-->
+    <!--<div class="photo photo2"></div>-->
+    <!--<ul class="details">-->
+        <!--<li class="author"><a href="#">Jane Doe</a></li>-->
+        <!--<li class="date">July. 15, 2015</li>-->
+        <!--<li class="tags">-->
+            <!--<ul>-->
+                <!--<li><a href="#">Learn</a></li>-->
+                <!--<li><a href="#">Code</a></li>-->
+                <!--<li><a href="#">JavaScript</a></li>-->
+            <!--</ul>-->
+        <!--</li>-->
+    <!--</ul>-->
+    <!--<div class="description">-->
+        <!--<h1>Mastering the Language</h1>-->
+        <!--<h2>Java is not the same as JavaScript</h2>-->
+        <!--<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>-->
+        <!--<a href="#">Read More</a>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+<!--END PEN CODE-->
+<script>
+
+    var wechat = document.querySelector('#wechat');
+    var wechats = document.querySelectorAll('.wechathidden');
+    var wechatcounter = 0;
+    wechat.addEventListener('click',function () {
+        wechatcounter++;
+        if(wechatcounter%2!=0){
+            wechats.forEach(x=>{
+//            console.log("wechathidden")
+                x.classList.remove("wechathidden");
+                x.classList.add("wechatshow");
+
+            })
+            wechat.innerHTML = "Show Less...";
+        }else {
+            wechats.forEach(x=>{
+//            console.log("wechathidden")
+                x.classList.remove("wechatshow");
+                x.classList.add("wechathidden");
+
+            })
+            wechat.innerHTML = "Read More...";
+        }
+
+    })
+</script>

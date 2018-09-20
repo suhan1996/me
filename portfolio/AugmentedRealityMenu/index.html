@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Augmented Reality Menu</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:300,500|Arvo:700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+		<!--[if lte IE 8]><style>.support-note .note-ie{display:block;}</style><![endif]-->
+    </head>
+    <body>
+        <div class="container">
+
+			
+			<header>
+
+
+				<div class="support-note"><!-- let's check browser support with modernizr -->
+					<span class="no-cssanimations">CSS animations are not supported in your browser</span>
+					<span class="no-csstransforms">CSS transforms are not supported in your browser</span>
+					<span class="no-csstransforms3d">CSS 3D transforms are not supported in your browser</span>
+					<span class="no-csstransitions">CSS transitions are not supported in your browser</span>
+					<span class="note-ie">Sorry, only modern browsers.</span>
+				</div>
+				
+			</header>
+			
+			<section class="main">
+
+				<div id="rm-container" class="rm-container">
+
+					<div class="rm-wrapper">
+
+						<div class="rm-cover">
+
+							<div class="rm-front">
+								<div class="rm-content">
+
+									<div class="rm-logo"></div>
+									<h2>Augmented Reality Menu</h2>
+									<h3>Build with Unity Vuforia Scan to Interact</h3>
+
+									<a href="#" class="rm-button-open">See Demo</a>
+									<div class="rm-info">
+										<p>
+										<strong>Han Su</strong><br>
+										Spring 2017<br>
+									</div>
+
+								</div><!-- /rm-content -->
+							</div><!-- /rm-front -->
+
+							<div class="rm-back">
+								<div class="rm-content">
+									<h4>idea</h4>
+									<dl>
+										<dt>Add some interactivity</dt>
+										<dd>Paper menu has been introduced in 18th century and hasn’t changed much.</dd>
+
+										<dt>Augmented Reality with tangible interaction</dt>
+										<dd>Not just scan and show the model or animation, but with tangible interaction </dd>
+
+										<dt>Automatic ordering</dt>
+										<dd>No waitress or waiter, all the process would become automatic</dd>
+
+									</dl>
+
+									<h4>Web based/App based</h4>
+									<dl>
+										<dt>App based</dt>
+										<dd>After gaining users, AR menu could become an app and provides services to the restaurants</dd>
+
+										<dt>Web based</dt>
+										<dd>More friendly to new user, and should be the trend in the future</dd>
+
+									</dl>
+								</div><!-- /rm-content -->
+								<div class="rm-overlay"></div>
+
+							</div><!-- /rm-back -->
+
+						</div><!-- /rm-cover -->
+
+						<div class="rm-middle">
+							<div class="rm-inner">
+								<div class="rm-content">
+									<h4>Main Courses</h4>
+									<dl>
+										<dd>Pan-fried potato gnocchi with arugula salad</dd>
+
+										<dd>Tender sea palm noodles, seasoned vegetables, spicy peanut curry and tempeh fenel croquettes</dd>
+
+										<dd>Black lentil curry with arugula salad, caramelized shallots and roasted garlic</dd>
+
+										<dt>Tamari-Maple Glazed Tofu</dt>
+										<dd>Wasabi emulsion, sesame seeds and scallions</dd>
+
+										<dt>Maple Barbeque Tofu</dt>
+										<dd>Grilled marinated tofu, maple barbeque sauce, tahini slaw, grilled seasonal vegetables and mashed potatoes</dd>
+																													
+										<dd>King oyster mushroom with roasted cherries and sage</dd>
+										
+										<dd>Rigatoni with roasted cauliflower and spicy tomato sauce</dd>
+										
+										<dd>Saffron chickpea stew with grilled porcini mushrooms</dd>
+									</dl>
+								</div><!-- /rm-content -->
+								<div class="rm-overlay"></div>
+							</div><!-- /rm-inner -->
+						</div><!-- /rm-middle -->
+
+						<div class="rm-right">
+
+							<div class="rm-front">
+								
+							</div>
+
+							<div class="rm-back">
+								<span class="rm-close">Close</span>
+								<div class="rm-content">
+									<h4>Technology</h4>
+									<dl>
+										<dd>Developed in Unity</dd>
+										
+										<dd>With Vuforia, whose Computer Vision is pretty advanced</dd>
+										
+										<dd>3D Models are all made originally with Maya</dd>
+										
+										<dd>Button interaction are originally designed on the map, with the virtual button, but since the detection of you finger is not accurate enough, right now it is done with C# script and the interaction is on the screen of your device</dd>
+
+										<dd>Panorama stream is using Ricoh Theta</dd>
+
+									</dl>
+									<div class="rm-order">
+										<p>Like the idea? Email me &amp; Any questions : <strong>suhan@nyu.edu</strong></p>
+									</div>
+								</div><!-- /rm-content -->
+							</div><!-- /rm-back -->
+
+						</div><!-- /rm-right -->
+					</div><!-- /rm-wrapper -->
+
+				</div><!-- /rm-container -->
+
+			</section>
+			
+        </div>
+		<!-- jQuery if needed -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				Menu.init();
+			
+			});
+		</script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Is Han Online?",
+  "description": "A simple link sharing Chrome extension",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_popup": "linkshare.html",
+    "default_title": "Is Han Online?"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "http://*/",
+    "http://api.mongolab.com/*",
+    "geolocation",
+    "notifications",
+    "storage"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
