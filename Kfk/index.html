@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VizKafka</title>
+    <style>
+        @keyframes up-in {
+            from {
+                opacity: 0;
+                bottom: 0%;
+            }
+            to {
+                opacity: 1;
+                bottom: 85%;
+            }
+        }
+        .fill {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        body,
+        html {
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Raleway', sans-serif;
+        }
+        h1 {
+            font-size: x-large;
+        }
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            min-height: 100%;
+            height: 100%;
+            overflow: auto;
+            background-image: url('kfk.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            position: relative;
+        }
+        .container.no-scroll {
+            overflow: hidden;
+        }
+        .page {
+            width: 80%;
+            padding: 10px;
+        }
+        @media (max-width: 600px) {
+            .page {
+                width: 90%;
+            }
+        }
+        .grid {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .grid .grid-item {
+            width: 20%;
+            position: relative;
+            transition: transform 0.4s ease, opacity 0.5s ease;
+            opacity: 0.8;
+        }
+        .grid .grid-item:after {
+            content: '';
+            display: block;
+            margin-top: 100%;
+        }
+        @media (max-width: 600px) {
+            .grid .grid-item {
+                width: 50%;
+            }
+        }
+        .box {
+            height: 88%;
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-color: rgba(255,255,255,0.8);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top;
+            overflow: hidden;
+            cursor: pointer;
+
+
+
+        }
+        .grid .grid-item:hover{
+            transform: scale(1.05);
+            opacity: 1;
+        }
+        .box img {
+            width: 100%;
+            transition: transform 0.6s ease;
+        }
+
+        .box.selected {
+            opacity: 0;
+        }
+        .box.on-top {
+            cursor: default;
+            transition: all 0.4s ease;
+            box-shadow: 2px 2px 19px -2px rgba(0, 0, 0, 0.44);
+        }
+        .box.image-out img {
+            transform: translateY(-100%);
+        }
+        .content {
+            position: absolute;
+            padding: 20px 40px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .show .content {
+            opacity: 1;
+        }
+        @media (max-width: 600px) {
+            .content {
+                padding: 10px 20px;
+            }
+        }
+        .scroller {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+        .scroller h1 {
+            font-size: -webkit-xxx-large;
+            color: white;
+            width: 100%;
+            margin-bottom: 30px;
+            position: absolute;
+            bottom: 85%;
+            text-align: center;
+            animation: up-in 1s ease;
+        }
+        .top-up.ng-hide-add,
+        .top-up.ng-hide-remove {
+            transition: 0s ease top;
+        }
+        .top-up.ng-hide-add-active,
+        .top-up.ng-hide-remove-active {
+            transition: 0.6s ease top;
+        }
+        .top-up.ng-hide-add {
+            top: 0;
+        }
+        .top-up.ng-hide-add.ng-hide-add-active {
+            top: 100%;
+        }
+        .top-up.ng-hide-remove {
+            top: 100%;
+        }
+        .top-up.ng-hide-remove.ng-hide-remove-active {
+            top: 0;
+        }
+        .fullscreen-background {
+
+            overflow-y: auto;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #333;
+            transition: top 0.5s ease;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            -webkit-filter: blur(15px); /* Safari 6.0 - 9.0 */
+            filter:brightness(50%) blur(15px);
+        ;
+
+        }
+        .fullscreen-background.show {
+            top: 0;
+        }
+        .close-button {
+            z-index: 9999999999999999999;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .close-button i {
+            font-size: 35px;
+        }
+        .close-button:hover {
+            color: #ddd;
+        }
+        #myChart{
+            /*display: none;*/
+        }
+
+    </style>
+</head>
+<body>
+<script src="node_modules/chart_js/dist/Chart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-animate/angular-animate.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+
+<div class="container" ng-class="{'no-scroll': selected.length}" ng-app="app" ng-controller="mainCtrl">
+    <div class="page">
+        <div class="grid">
+            <div class="grid-item" ng-repeat="item in boxes">
+                <box class="box" item="item" on-select="selectBox" ng-class="{'selected': selected[0].item.name == item.name}"></box>
+            </div>
+        </div>
+    </div>
+    <div class="fullscreen-background top-up" ng-show="selected.length" ng-style="{'background-image': 'url(' + selected[0].item.image + ')'}"></div>
+    <div class="scroller" ng-show="selected.length">
+        <a class="close-button" ng-click="clearSelection()">
+            <i class="material-icons">close</i>
+        </a>
+        <h1>{{selected[0].item.name}}</h1>
+        <div big-box ng-repeat="item in selected" class="box on-top" position="item.position" selected="item.item">
+            <img ng-src="{{item.item.image}}" alt="" />
+            <div class="content">
+                <canvas id="myChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    function makechart(filename) {
+
+
+    var covers = document.querySelectorAll('.grid-item');
+    
+    
+    
+    $.getJSON("bookjson/"+filename, function(json) {
+        var stcs = [],scores = [];
+        var rst = JSON.parse(json)
+        for (var key in rst){
+            stcs.push(key)
+            scores.push(rst[key])
+        }
+        var process = []
+        var positivity = [];
+        var counter = 0;
+        scores.forEach(x=>{
+            counter++;
+        process.push(counter)
+        positivity.push(x.pos-x.neg)
+    })
+
+
+
+
+
+
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: process,
+                datasets: [{
+                    label: 'Positivity',
+                    data: positivity,
+                    sentence: stcs,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                },
+//                {
+//                    label: '# of Votes',
+//                    data: [2, 9, 13, 15, 12, 13],
+//                    sentence: ["randomsentence", "randomsentence", "randomsentence", "randomsentence", "randomsentence", "frandomsentence"],
+//                    backgroundColor: [
+//                        'rgba(255, 99, 132, 0)',
+//                        'rgba(54, 162, 235, 0.2)',
+//                        'rgba(255, 206, 86, 0.2)',
+//                        'rgba(75, 192, 192, 0.2)',
+//                        'rgba(153, 102, 255, 0.2)',
+//                        'rgba(255, 159, 64, 0.2)'
+//                    ],
+//                    borderColor: [
+//                        'rgba(255,99,132,1)',
+//                        'rgba(54, 162, 235, 1)',
+//                        'rgba(255, 206, 86, 1)',
+//                        'rgba(75, 192, 192, 1)',
+//                        'rgba(153, 102, 255, 1)',
+//                        'rgba(255, 159, 64, 1)'
+//                    ],
+//                    borderWidth: 1
+//                }
+
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+
+    var mychrt = document.querySelector('#myChart')
+        mychrt.style.display = "block";
+    });
+
+    }
+    function hidechart() {
+        var mychrt = document.querySelector('#myChart')
+        mychrt.style.display = "none";
+    }
+
+
+    var app = angular.module('app', ['ngAnimate'])
+
+    app.controller('mainCtrl', function($scope) {
+        $scope.boxes = [{
+            name: 'The Metamorphosis',
+            image: 'bookcover/themetamorphosis.jpg'
+        },{
+            name: 'Description of A Struggle',
+            image: 'bookcover/descriptionofastruggle.jpg'
+        },{
+            name: 'A Country Doctor',
+            image: 'bookcover/acountrydoctor.jpg'
+        },{
+            name: 'Investigations of A Dog',
+            image: 'bookcover/investigationsofadog.jpg'
+        }, {
+            name: 'Josephine',
+            image: 'bookcover/josephine.jpg'
+        }, {
+            name: 'Penalcolony',
+            image: 'bookcover/penalcolony.jpg'
+        }, {
+            name: 'Report for Anacademy',
+            image: 'bookcover/reportforanacademy.jpg'
+        }, {
+            name: 'The Great Wall of China',
+            image: 'bookcover/thegreatwallofchina.jpg'
+        }, {
+            name: 'The Judgement',
+            image: 'bookcover/thejudgement.jpg'
+        },  {
+            name: 'Wedding Preparations',
+            image: 'bookcover/weddingpreparations.jpg'
+        }];
+
+        $scope.selected = [];
+        $scope.selectBox = function(item, position) {
+            $scope.selected = [{
+                item: item,
+                position: position
+            }];
+            $scope.$apply();
+            var bookname = (((item.image).slice(10)).slice(0,-4));
+            makechart(bookname+'.json');
+        }
+        $scope.clearSelection = function() {
+            $scope.selected = [];
+            hidechart();
+        }
+    })
+
+    app.directive('box', function() {
+        return {
+            restrict: 'E',
+            scope: {},
+            bindToController: {
+                onSelect: "=",
+                item: "="
+            },
+            controllerAs: 'box',
+            controller: function() {
+                var box = this;
+
+                box.goFullscreen = function(e) {
+                    box.onSelect(box.item, e.target.getBoundingClientRect())
+                }
+            },
+            link: function(scope, element) {
+                element.bind('click', scope.box.goFullscreen)
+                element.css({
+                    'background-image': 'url(' + scope.box.item.image + ')'
+                })
+            }
+        }
+    })
+
+    app.directive('bigBox', function($timeout) {
+        return {
+            restrict: 'AE',
+            scope: {},
+            bindToController: {
+                position: "=",
+                selected: "=",
+                onSelect: "="
+            },
+            controllerAs: 'box',
+            controller: function() {
+                var box = this;
+            },
+            link: function(scope, element) {
+                var css = {}
+                for (var key in scope.box.position) {
+                    css[key] = scope.box.position[key] + 'px';
+                }
+
+                element.css(css);
+
+                $timeout(function() {
+                    element.css({
+                        top: '20%',
+                        left: '10%'
+                    })
+                    element.addClass('image-out');
+                }, 200)
+
+                $timeout(function() {
+                    element.css({
+                        width: '80%',
+                        height: '80%'
+                    })
+                }, 500)
+
+                $timeout(function(){
+                    element.addClass('show');
+                }, 800)
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
