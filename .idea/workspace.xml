@@ -24,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="37" column="372" lean-forward="false" selection-start-line="37" selection-start-column="372" selection-end-line="37" selection-end-column="372" />
+            <state relative-caret-position="286">
+              <caret line="38" column="252" lean-forward="false" selection-start-line="38" selection-start-column="252" selection-end-line="38" selection-end-column="252" />
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portfolio/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
+            <state relative-caret-position="1260">
               <caret line="84" column="187" lean-forward="false" selection-start-line="84" selection-start-column="187" selection-end-line="84" selection-end-column="187" />
               <folding />
             </state>
@@ -55,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/portfolio/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+              <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -251,7 +251,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -281,6 +280,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -475,12 +475,13 @@
       <workItem from="1549034907264" duration="276000" />
       <workItem from="1549868541954" duration="103000" />
       <workItem from="1551134148886" duration="272000" />
-      <workItem from="1554564030843" duration="415000" />
+      <workItem from="1554564030843" duration="659000" />
+      <workItem from="1554564750622" duration="18000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258822000" />
+    <option name="totallyTimeSpent" value="259084000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -718,14 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portfolio/CreativeCoding/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portfolio/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -773,7 +766,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/portfolio/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
+        <state relative-caret-position="1260">
           <caret line="84" column="187" lean-forward="false" selection-start-line="84" selection-start-column="187" selection-end-line="84" selection-end-column="187" />
           <folding />
         </state>
@@ -782,15 +775,23 @@
     <entry file="file://$PROJECT_DIR$/portfolio/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portfolio/CreativeCoding/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="37" column="372" lean-forward="false" selection-start-line="37" selection-start-column="372" selection-end-line="37" selection-end-column="372" />
+        <state relative-caret-position="286">
+          <caret line="38" column="252" lean-forward="false" selection-start-line="38" selection-start-column="252" selection-end-line="38" selection-end-column="252" />
           <folding />
         </state>
       </provider>
